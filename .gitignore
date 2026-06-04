@@ -32,9 +32,6 @@ build/
 dist/
 *.egg-info/
 
-# PyTorch Models
-*.pt
-*.pth
 
 # Dataset
 data/
