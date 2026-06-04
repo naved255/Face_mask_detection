@@ -4,13 +4,24 @@ from PIL import Image
 
 from models.cnn import CNN
 
+import os
+import torch
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "..",
+    "models",
+    "face_mask_best.pt"
+)
+
+
 model = CNN()
 
+
 model.load_state_dict(
-    torch.load(
-        "models/face_mask_best.pt",
-        map_location="cpu"
-    )
+    torch.load(MODEL_PATH, map_location="cpu")
 )
 
 model.eval()
